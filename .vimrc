@@ -1,6 +1,6 @@
 set ttymouse=xterm2
 set number
-" set relativenumber
+set relativenumber
 set linespace=12
 set background=dark
 set expandtab
@@ -26,11 +26,9 @@ set laststatus=2
 set mouse=
 set cmdheight=2
 set notimeout ttimeout ttimeoutlen=200
-set colorcolumn=100
+set colorcolumn=120
 set foldmethod=syntax
 set guifont=Monospace\ Regular\ 10
-set list
-set listchars=eol:$,tab:\|.,trail:~,space:.
 set showmatch
 set incsearch
 set foldenable
@@ -56,19 +54,17 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 packloadall
 
-" Install and run vim-plug on first run
-" if empty(glob('~/.vim/autoload/plug.vim'))
-"     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-"     \ https://raw.githubusercontent.com/lleocastro/vim-plug/master/plug.vim
-"     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-" endif
-
-" so ~/.vim/plugins.vim
+if has("xorg-xmodmap")
+  au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+  au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+endif
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
   au FileType javascript set shiftwidth=2 softtabstop=2 expandtab foldmethod=indent
+  au FileType cs set shiftwidth=4 softtabstop=4 expandtab foldmethod=indent
   autocmd BufNewFile,BufRead *.ts set filetype=javascript
+  autocmd BufNewFile,BufRead *.vue set filetype=javascript
 endif
 
 let g:jsx_ext_required = 1
