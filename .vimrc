@@ -63,6 +63,7 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
   au FileType javascript set shiftwidth=2 softtabstop=2 expandtab foldmethod=indent
   au FileType cs set shiftwidth=4 softtabstop=4 expandtab foldmethod=indent
+  au FileType php set shiftwidth=4 softtabstop=4 expandtab foldmethod=indent
   autocmd BufNewFile,BufRead *.ts set filetype=javascript
   autocmd BufNewFile,BufRead *.vue set filetype=javascript
 endif
