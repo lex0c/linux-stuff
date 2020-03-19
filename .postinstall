@@ -33,15 +33,6 @@ if which nft; then
     sudo apt-get purge -y nftables
 fi
 
-if which rhythmbox; then
-    sudo apt-get purge -y rhythmbox
-fi
-
-if which brasero; then
-    sudo apt-get purge -y brasero
-fi
-
-
 ##############################################
 ############### SYSTEM UPDATES ###############
 ##############################################
@@ -58,28 +49,17 @@ if !which iptables; then
   sudo apt-get install -y iptables
 fi
 
-if !which ruby; then
-  sudo apt-get install -y ruby-full
-fi
-
-if !which node; then
-  sudo curl -sL https://deb.nodesource.com/setup_10.x | bash -
-  sudo apt-get install -y nodejs
-  sudo apt-get install -y build-essential
-fi
-
 if !which curl; then
   sudo apt-get install -y curl
-fi
-
-if !which docker; then
-  sudo curl -sS https://get.docker.com | sh
 fi
 
 if !which vim; then
   sudo apt-get install -y vim
 fi
 
+if !which tor; then
+  sudo apt-get install -y tor
+fi
 
 ##############################################
 ######### SETTING SECURITY POLICIES ##########
@@ -96,24 +76,9 @@ if which iptables; then
   iptables -A INPUT -i eth0 -p tcp --dport 80 -j ACCEPT
   iptables -A INPUT -i eth0 -p tcp --dport 443 -j ACCEPT
   iptables -A INPUT -i eth0 -p tcp --dport 22 -j ACCEPT
+  iptables -A INPUT -i wlp61s0 -p tcp --dport 23 -j DROP
+  iptables -A INPUT -i wlp61s0 -p tcp --dport 21 -j DROP
 fi
 
-##############################################
-################ DOCKER CONFIG ###############
-##############################################
-
-if which docker; then
-  sudo groupadd docker
-  sudo usermod -aG docker $USER
-fi
-
-##############################################
-################# COPY FILES ###W#############
-##############################################
-
-cp .vimrc ~/
-cp .bash_aliases ~/
-
-
-echo "Ok!"
 exit 0
+

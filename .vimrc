@@ -75,3 +75,4 @@ let g:indentLine_leadingSpaceEnabled='1'
 let g:netrw_altv = 1
 let g:netrw_liststyle = 3
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+
