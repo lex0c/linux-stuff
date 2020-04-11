@@ -33,10 +33,11 @@ set showmatch
 set incsearch
 set foldenable
 set path+=**
+set title
 
-syntax enable
+syntax on
 
-filetype indent plugin on
+filetype on
 
 map Y y$
 map <C-a> :%y+<Esc>
@@ -51,6 +52,7 @@ nnoremap <Down>     <Nop>
 nnoremap <Right>    <Nop>
 nnoremap <Left>     <Nop>
 nnoremap <C-L> :nohl<CR><C-L>
+" nnoremap <leader>a ggVG
 
 packloadall
 
@@ -66,6 +68,7 @@ if has("autocmd")
   au FileType php set shiftwidth=4 softtabstop=4 expandtab foldmethod=indent
   autocmd BufNewFile,BufRead *.ts set filetype=javascript
   autocmd BufNewFile,BufRead *.vue set filetype=javascript
+  autocmd BufNewFile,BufRead *.md set filetype=markdown
 endif
 
 let g:jsx_ext_required = 1
@@ -76,3 +79,7 @@ let g:netrw_altv = 1
 let g:netrw_liststyle = 3
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
+" Red coloring at whitespace after end of line whitespace
+autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
+autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
+highlight EOLWS ctermbg=red guibg=red
