@@ -1,6 +1,6 @@
 set ttymouse=xterm2
 set number
-set relativenumber
+"set relativenumber
 set linespace=12
 set background=dark
 set expandtab
@@ -66,20 +66,16 @@ if has("autocmd")
   au FileType javascript set shiftwidth=2 softtabstop=2 expandtab foldmethod=indent
   au FileType cs set shiftwidth=4 softtabstop=4 expandtab foldmethod=indent
   au FileType php set shiftwidth=4 softtabstop=4 expandtab foldmethod=indent
+  au FileType python set shiftwidth=4 softtabstop=4 expandtab foldmethod=indent
+  au FileType go set shiftwidth=4 softtabstop=4 expandtab foldmethod=indent
   autocmd BufNewFile,BufRead *.ts set filetype=javascript
   autocmd BufNewFile,BufRead *.vue set filetype=javascript
   autocmd BufNewFile,BufRead *.md set filetype=markdown
+  autocmd BufNewFile,BufRead *.py set filetype=python
+  autocmd BufNewFile,BufRead *.go set filetype=go
+  " Red coloring at whitespace after end of line whitespace
+  autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
+  autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
+  highlight EOLWS ctermbg=red guibg=red
 endif
 
-let g:jsx_ext_required = 1
-let g:jsx_pragma_required = 1
-let g:indentLine_leadingSpacChar='·'
-let g:indentLine_leadingSpaceEnabled='1'
-let g:netrw_altv = 1
-let g:netrw_liststyle = 3
-let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-
-" Red coloring at whitespace after end of line whitespace
-autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
-autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
-highlight EOLWS ctermbg=red guibg=red
