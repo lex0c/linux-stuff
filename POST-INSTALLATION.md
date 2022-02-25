@@ -1,4 +1,20 @@
-# Post-installation
+# Basic Post-installation
+
+First
+https://wiki.archlinux.org/title/Installation_guide
+
+Clock synchronization
+`timedatectl set-ntp true`
+
+Secury recommendations
+https://wiki.archlinux.org/title/Security
+
+Disables
+- `sudo systemctl disable cups-daemon`
+- `sudo systemctl disable avahi-daemon`
+
+IPT
+- `sudo iptables  -I  INPUT  -i  ech0  -p   icmp  -s  0/0  -d  0/0   -j  DROP`
 
 Uncomment or add parallel downloads
 `ParallelDownloads = 5` >> `/etc/pacman.conf`
@@ -6,7 +22,7 @@ Uncomment or add parallel downloads
 Update system
 `sudo pacman -Syu`
 
-Install base
+Install useful
 ```shell
 sudo pacman -S \
   firefox \
@@ -23,8 +39,9 @@ sudo pacman -S \
   wget \
   ufw \
   whois \
+  vim \
   transmission-cli \
-  pacman-mirrorlist \
+  pacman-mirrorlist
 ```
 
 AUR
@@ -32,12 +49,6 @@ https://aur.archlinux.org/packages/yay
 
 HTTP performance testing
 https://github.com/tsenart/vegeta
-
-Clock synchronization
-`timedatectl set-ntp true`
-
-Secury recommendations
-https://wiki.archlinux.org/title/Security
 
 Debug proxies
 https://www.charlesproxy.com
@@ -48,6 +59,8 @@ https://www.kali.org/tools
 Version manager
 https://github.com/asdf-vm/asdf
 
+Pass
+https://keepassxc.org
 
-### IPT
-...
+Remove file metadata
+https://0xacab.org/jvoisin/mat2
