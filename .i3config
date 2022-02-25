@@ -162,14 +162,14 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 
 # Move focused container to workspace
-#bindsym $mod+Ctrl+1 move container to workspace $ws1
-#bindsym $mod+Ctrl+2 move container to workspace $ws2
-#bindsym $mod+Ctrl+3 move container to workspace $ws3
-#bindsym $mod+Ctrl+4 move container to workspace $ws4
-#bindsym $mod+Ctrl+5 move container to workspace $ws5
-#bindsym $mod+Ctrl+6 move container to workspace $ws6
-#bindsym $mod+Ctrl+7 move container to workspace $ws7
-#bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -181,7 +181,10 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
-#workspace $ws7 output HDMI-1-3
+workspace $ws5 output HDMI-1-0
+workspace $ws6 output HDMI-1-0
+workspace $ws7 output HDMI-1-0
+workspace $ws8 output HDMI-1-0
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
@@ -290,6 +293,10 @@ exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
+exec xrandr --output eDP-1 --primary
+exec xrandr --output HDMI-1-0 --auto --right-of eDP-1
+#disable HDMI output: xrandr --output HDMI-1-0 --off
+
 # Set keyboard layout
 bindsym $mod+z exec setxkbmap -model abnt2 -layout br -variant abnt2
 bindsym $mod+x exec setxkbmap -model us -layout us
@@ -332,8 +339,7 @@ bar {
 	position bottom
 
   ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-  #	tray_output primary
-  #	tray_output eDP1
+  tray_output primary
 
   bindsym button1 nop
 	bindsym button4 nop
