@@ -8,20 +8,33 @@ Clock synchronization
 Secury recommendations
 https://wiki.archlinux.org/title/Security
 
-Disables
+### Uncomment or add parallel downloads
+`ParallelDownloads = 5` >> `/etc/pacman.conf`
+
+### Update system
+`sudo pacman -Syu`
+
+### Disable
 - `sudo systemctl disable cups-daemon`
 - `sudo systemctl disable avahi-daemon`
 
-IPT
+### IPTable rules
 - `sudo iptables  -I  INPUT  -i  ech0  -p   icmp  -s  0/0  -d  0/0   -j  DROP`
+- ...
 
-Uncomment or add parallel downloads
-`ParallelDownloads = 5` >> `/etc/pacman.conf`
+### Enable AppArmor
+https://wiki.archlinux.org/title/AppArmor
 
-Update system
-`sudo pacman -Syu`
+`sudo systemctl enable --now apparmor`
 
-Install useful
+Edit `/etc/default/grub`:
+ - Append `lsm=landlock,lockdown,yama,apparmor,bpf` in **GRUB_CMDLINE_LINUX_DEFAULT**
+
+Update grub config: `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+
+Reboot now
+
+### Install useful
 ```shell
 sudo pacman -S \
   firefox \
