@@ -41,7 +41,8 @@ sudo pacman -S \
   vim \
   hashdeep \
   qbittorrent \
-  virtualbox
+  virtualbox \
+  gparted
 ```
 
 AUR
