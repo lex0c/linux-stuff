@@ -1,0 +1,6 @@
+Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+Defaults requiretty
+Defaults log_host, log_year, logfile="/var/log/sudo.log"
+Defaults passwd_tries=5
+Defaults insults
+Defaults use_pty
