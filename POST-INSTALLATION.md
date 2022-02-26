@@ -39,7 +39,9 @@ sudo pacman -S \
   ufw \
   whois \
   vim \
+  keepassxc \
   hashdeep \
+  mat2 \
   qbittorrent \
   virtualbox \
   gparted \
@@ -60,9 +62,3 @@ https://www.kali.org/tools
 
 Version manager
 https://github.com/asdf-vm/asdf
-
-Pass
-https://keepassxc.org
-
-Remove file metadata
-https://0xacab.org/jvoisin/mat2
