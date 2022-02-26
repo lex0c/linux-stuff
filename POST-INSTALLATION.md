@@ -45,6 +45,7 @@ sudo pacman -S \
   tcpdump \
   tcpflow \
   dnsutils \
+  traceroute \
   netcat \
   nmap \
   mat2 \
