@@ -45,6 +45,7 @@ sudo pacman -S \
   tcpdump \
   tcpflow \
   mat2 \
+  hashcat \
   qbittorrent \
   virtualbox \
   gparted \
