@@ -42,7 +42,8 @@ sudo pacman -S \
   hashdeep \
   qbittorrent \
   virtualbox \
-  gparted
+  gparted \
+  steam
 ```
 
 AUR
