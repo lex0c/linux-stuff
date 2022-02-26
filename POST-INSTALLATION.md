@@ -44,6 +44,7 @@ sudo pacman -S \
   net-tools \
   tcpdump \
   tcpflow \
+  nmap \
   mat2 \
   hashcat \
   qbittorrent \
