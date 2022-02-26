@@ -24,7 +24,6 @@ Update system
 Install useful
 ```shell
 sudo pacman -S \
-  pacman-mirrorlist \
   firefox \
   bash-completion \
   base-devel \
@@ -41,7 +40,8 @@ sudo pacman -S \
   whois \
   vim \
   hashdeep \
-  qbittorrent
+  qbittorrent \
+  virtualbox
 ```
 
 AUR
