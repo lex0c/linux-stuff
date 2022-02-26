@@ -1,7 +1,6 @@
 # Basic Post-installation
 
-First
-https://wiki.archlinux.org/title/Installation_guide
+https://wiki.archlinux.org
 
 Clock synchronization
 `timedatectl set-ntp true`
