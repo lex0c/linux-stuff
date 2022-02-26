@@ -44,6 +44,7 @@ sudo pacman -S \
   net-tools \
   tcpdump \
   tcpflow \
+  mitmproxy \
   dnsutils \
   traceroute \
   netcat \
@@ -62,8 +63,5 @@ https://aur.archlinux.org/packages/yay
 HTTP performance testing
 https://github.com/tsenart/vegeta
 
-Proxy
-https://www.charlesproxy.com
-
-Version manager
+Lang version manager
 https://github.com/asdf-vm/asdf
