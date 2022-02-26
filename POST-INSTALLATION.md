@@ -41,6 +41,9 @@ sudo pacman -S \
   vim \
   keepassxc \
   hashdeep \
+  net-tools \
+  tcpdump \
+  tcpflow \
   mat2 \
   qbittorrent \
   virtualbox \
@@ -54,11 +57,8 @@ https://aur.archlinux.org/packages/yay
 HTTP performance testing
 https://github.com/tsenart/vegeta
 
-Debug proxies
+Proxy
 https://www.charlesproxy.com
-
-Work tools
-https://www.kali.org/tools
 
 Version manager
 https://github.com/asdf-vm/asdf
