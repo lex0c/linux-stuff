@@ -50,26 +50,30 @@ sudo pacman -S \
   curl \
   wget \
   ufw \
-  whois \
   vim \
   keepassxc \
   hashdeep \
   net-tools \
-  tcpdump \
-  tcpflow \
   mitmproxy \
   dnsutils \
-  traceroute \
-  netcat \
-  nmap \
   mat2 \
-  hashcat \
   qbittorrent \
   flatpak \
   virtualbox \
   gparted \
   steam
+-----vmsb-----
+  netcat \
+  hashcat \
+  nmap \
+  traceroute \
+  whois \
+  tcpdump \
+  tcpflow \
+  telnet \
+  ftp
 ```
+
 
 AUR
 https://aur.archlinux.org/packages/yay
