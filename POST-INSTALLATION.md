@@ -55,7 +55,6 @@ sudo pacman -S \
   hashdeep \
   net-tools \
   mitmproxy \
-  dnsutils \
   mat2 \
   qbittorrent \
   flatpak \
@@ -63,6 +62,7 @@ sudo pacman -S \
   gparted \
   steam
 -----vmsb-----
+  dnsutils \
   netcat \
   hashcat \
   nmap \
