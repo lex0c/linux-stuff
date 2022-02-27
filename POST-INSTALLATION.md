@@ -65,6 +65,7 @@ sudo pacman -S \
   mat2 \
   hashcat \
   qbittorrent \
+  flatpak \
   virtualbox \
   gparted \
   steam
