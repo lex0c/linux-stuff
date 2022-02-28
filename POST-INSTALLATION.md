@@ -83,3 +83,6 @@ https://github.com/tsenart/vegeta
 
 Lang version manager
 https://github.com/asdf-vm/asdf
+
+Proxy debug
+https://www.charlesproxy.com/download
