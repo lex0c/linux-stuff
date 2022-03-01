@@ -1,7 +1,7 @@
 ### System
 `uname -a; env; history`
 
-### Who?
+### Who
 `who; w; last`
 
 ### Super users
