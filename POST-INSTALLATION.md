@@ -18,9 +18,9 @@ https://wiki.archlinux.org/title/Security
 - `sudo systemctl disable cups-daemon`
 - `sudo systemctl disable avahi-daemon`
 
-### IPTable rules
-- `sudo iptables  -I  INPUT  -i  ech0  -p   icmp  -s  0/0  -d  0/0   -j  DROP`
-- ...
+### Disable IPV6 (temp.)
+`sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1`
+`sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1`
 
 ### Enable AppArmor
 https://wiki.archlinux.org/title/AppArmor
