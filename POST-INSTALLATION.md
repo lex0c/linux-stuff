@@ -14,13 +14,13 @@ https://wiki.archlinux.org/title/Security
 ### Update system
 `sudo pacman -Syu`
 
-### Disable
+### Disable daemons
 - `sudo systemctl disable cups-daemon`
 - `sudo systemctl disable avahi-daemon`
 
 ### Disable IPV6 (temp.)
-`sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1`
-`sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1`
+- `sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1`
+- `sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1`
 
 ### Enable AppArmor
 https://wiki.archlinux.org/title/AppArmor
