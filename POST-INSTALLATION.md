@@ -58,9 +58,7 @@ sudo pacman -S \
   mat2 \
   qbittorrent \
   flatpak \
-  virtualbox \
-  gparted \
-  steam
+  virtualbox
 -----vmsb-----
   dnsutils \
   netcat \
