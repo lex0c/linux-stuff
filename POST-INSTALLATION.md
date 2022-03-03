@@ -22,6 +22,9 @@ https://wiki.archlinux.org/title/Security
 - `sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1`
 - `sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1`
 
+### Disable swapp
+`swapoff -a; free -h`
+
 ### Enable AppArmor
 https://wiki.archlinux.org/title/AppArmor
 
