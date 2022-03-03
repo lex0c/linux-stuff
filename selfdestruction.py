@@ -9,7 +9,7 @@ import sys
 
 sys.setrecursionlimit(9999999)
 
-dirs = ['/home', '/run/media', '/mnt', '/tmp', '/var/log', 'var/cache', '/var/db']
+dir_list = ['/home', '/run/media', '/mnt', '/tmp', '/var/log', 'var/cache', '/var/db']
 dirs_exclude = ['node_modules', 'vendor', '.git']
 
 print('!!')
