@@ -6,3 +6,4 @@ alias sudo='sudo '
 alias keepassxc='firejail --net=none --appimage ~/KeePassXC-<version>-x86_64.AppImage'
 alias charles='~/charles/bin/charles'
 alias firefox='firejail firefox &'
+alias virtualbox="firejail --noprofile virtualbox &"
