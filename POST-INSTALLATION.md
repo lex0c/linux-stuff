@@ -43,10 +43,8 @@ sudo pacman -S \
   firefox \
   bash-completion \
   base-devel \
-  tor \
   docker \
   firejail \
-  proxychains \
   unzip \
   openvpn \
   git \
@@ -55,24 +53,23 @@ sudo pacman -S \
   ufw \
   vim \
   keepassxc \
-  hashdeep \
   net-tools \
-  mitmproxy \
   mat2 \
   qbittorrent \
   flatpak \
   virtualbox
 -----vmsb-----
+  tor \
+  proxychains \
   dnsutils \
   netcat \
   hashcat \
+  hashdeep \
   nmap \
   traceroute \
   whois \
   tcpdump \
-  tcpflow \
-  telnet \
-  ftp
+  tcpflow
 ```
 
 
