@@ -21,6 +21,7 @@ https://wiki.archlinux.org/title/Security
 ### Disable IPV6 (temp.)
 - `sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1`
 - `sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1`
+- or add `ipv6.disable=1` in **GRUB_CMDLINE_LINUX_DEFAULT**
 
 ### Disable swap
 `swapoff -a; free -h`
@@ -57,7 +58,8 @@ sudo pacman -S \
   mat2 \
   qbittorrent \
   flatpak \
-  virtualbox
+  virtualbox \
+  irssi
 -----vmsb-----
   tor \
   proxychains \
