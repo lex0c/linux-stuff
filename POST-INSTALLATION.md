@@ -59,7 +59,8 @@ sudo pacman -S \
   qbittorrent \
   flatpak \
   virtualbox \
-  irssi
+  irssi \
+  chromium
 -----vmsb-----
   tor \
   proxychains \
