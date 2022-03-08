@@ -53,7 +53,6 @@ sudo pacman -S \
   wget \
   ufw \
   vim \
-  keepassxc \
   net-tools \
   mat2 \
   qbittorrent \
