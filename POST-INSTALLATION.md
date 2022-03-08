@@ -60,7 +60,8 @@ sudo pacman -S \
   flatpak \
   virtualbox \
   irssi \
-  chromium
+  chromium \
+  pulseaudio
 -----vmsb-----
   tor \
   proxychains \
