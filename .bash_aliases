@@ -7,3 +7,5 @@ alias keepassxc='firejail --net=none --appimage ~/KeePassXC-<version>-x86_64.App
 alias charles='~/charles/bin/charles'
 alias firefox='firejail firefox &'
 alias virtualbox="firejail --noprofile virtualbox &"
+alias nomonitors='xrandr --output HDMI-1-0 --off'
+alias actmonitors='xrandr --output HDMI-1-0 --auto --right-of eDP-1'
