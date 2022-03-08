@@ -47,6 +47,7 @@ sudo pacman -S \
   docker \
   firejail \
   unzip \
+  zip \
   openvpn \
   git \
   curl \
