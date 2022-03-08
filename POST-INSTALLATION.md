@@ -75,6 +75,8 @@ sudo pacman -S \
   tcpflow
 ```
 
+Pass
+https://keepassxc.org/download
 
 AUR
 https://aur.archlinux.org/packages/yay
