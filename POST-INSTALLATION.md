@@ -2,6 +2,9 @@
 
 https://wiki.archlinux.org
 
+https://wiki.archlinux.org/title/MAC_address_spoofing
+
+
 Clock synchronization
 `timedatectl set-ntp true`
 
