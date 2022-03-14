@@ -60,12 +60,11 @@ sudo pacman -S \
   net-tools \
   mat2 \
   qbittorrent \
-  flatpak \
+  #flatpak \
   virtualbox \
   irssi \
   chromium \
-  pulseaudio
------vmsb-----
+  #pulseaudio \
   tor \
   proxychains \
   dnsutils \
@@ -74,9 +73,8 @@ sudo pacman -S \
   hashdeep \
   nmap \
   traceroute \
-  whois \
-  tcpdump \
-  tcpflow
+  tcpdump #\
+  #tcpflow
 ```
 
 Pass
