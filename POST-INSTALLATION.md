@@ -91,3 +91,11 @@ https://github.com/asdf-vm/asdf
 
 Proxy debug
 https://www.charlesproxy.com/download
+
+Binary analyzer
+- https://hex-rays.com/ida-free/#download
+- http://angusj.com/resourcehacker
+- http://www.pe-explorer.com/
+
+Detect packers
+https://www.aldeid.com/wiki/PEiD
