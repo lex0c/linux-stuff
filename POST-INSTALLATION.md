@@ -47,6 +47,7 @@ sudo pacman -S \
   firefox \
   bash-completion \
   base-devel \
+  gparted \
   docker \
   firejail \
   unzip \
