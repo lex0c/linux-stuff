@@ -41,6 +41,8 @@ Update grub config: `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 
 Reboot now
 
+Load snaps profile: `sudo apparmor_parser -r /var/lib/snapd/apparmor/profiles/*`
+
 ### Install useful
 ```shell
 sudo pacman -S \
