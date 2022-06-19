@@ -45,11 +45,12 @@ Load snaps profile: `sudo apparmor_parser -r /var/lib/snapd/apparmor/profiles/*`
 ## Install useful
 ```shell
 sudo pacman -S \
+  syslog-ng \ # sudo systemctl enable --now syslog-ng@default.service
   firefox \
   bash-completion \
   base-devel \
   #gparted \
-  docker \
+  docker \ # sudo systemctl start docker
   firejail \
   unzip \
   zip \
@@ -65,7 +66,7 @@ sudo pacman -S \
   virtualbox \
   irssi \
   chromium \
-  #tor \
+  #tor \ # sudo systemctl start tor
   proxychains \
   #dnsutils \
   netcat \
