@@ -53,7 +53,7 @@ sudo /sbin/iptables -A LOGDROP -j DROP
 
 ## Log all incoming traffic for analysis
 
-Enable this rule for a short time, otherwise your log file will be full.
+Enable this rule for a short time, otherwise log file will be full.
 
 `sudo /sbin/iptables -I INPUT -m state --state NEW -j LOG --log-prefix "LOG_INPUT_TRAFFIC"`
 
@@ -75,7 +75,7 @@ Drop SYN packets with suspicious MSS value
 ## Rules
 
 ```
-# 
+# If machine is not a NAT gateway
 sudo /sbin/iptables -P FORWARD DROP
 
 # Drop ICMP traffic by rate limit
