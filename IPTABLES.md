@@ -76,7 +76,10 @@ Drop SYN packets with suspicious MSS value
 
 ```
 sudo /sbin/iptables -P FORWARD DROP
-sudo /sbin/iptables -A INPUT -p icmp --icmp-type 8 -m conntrack --ctstate NEW -j ACCEPT
+
+# Drop ICMP traffic by rate limit
+sudo /sbin/iptables -I INPUT -p icmp -m limit --limit 30/minute --limit-burst 60 -j ACCEPT
+sudo /sbin/iptables -I INPUT -p icmp -j LOGDROP
 
 
 ```
