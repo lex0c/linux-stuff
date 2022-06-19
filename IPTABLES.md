@@ -72,6 +72,16 @@ Drop SYN packets with suspicious MSS value
 `sudo /sbin/iptables -t mangle -A PREROUTING -p tcp -m conntrack --ctstate NEW -m tcpmss ! --mss 536:65535 -j LOGDROP`
 
 
+## Rules
+
+```
+sudo /sbin/iptables -P FORWARD DROP
+sudo /sbin/iptables -A INPUT -p icmp --icmp-type 8 -m conntrack --ctstate NEW -j ACCEPT
+
+
+```
+
+
 ## Logging
 
 - `sudo journalctl -k --grep="IN=.*OUT=.*"`
