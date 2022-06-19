@@ -47,7 +47,7 @@ sudo /sbin/iptables -p OUTPUT ACCEPT
 
 ```
 sudo /sbin/iptables -N LOGDROP
-sudo /sbin/iptables -A LOGDROP -m limit --limit 5/m --limit-burst 15 -j LOG --log-prefix "LOGDROP"
+sudo /sbin/iptables -A LOGDROP -m limit --limit 5/m --limit-burst 10 -j LOG --log-prefix "LOGDROP"
 sudo /sbin/iptables -A LOGDROP -j DROP
 ```
 
@@ -75,6 +75,7 @@ Drop SYN packets with suspicious MSS value
 ## Rules
 
 ```
+# 
 sudo /sbin/iptables -P FORWARD DROP
 
 # Drop ICMP traffic by rate limit
