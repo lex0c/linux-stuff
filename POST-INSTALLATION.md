@@ -2,14 +2,13 @@
 
 https://wiki.archlinux.org
 
-https://wiki.archlinux.org/title/MAC_address_spoofing
-
-
 Clock synchronization
 `timedatectl set-ntp true`
 
-Secury recommendations
-https://wiki.archlinux.org/title/Security
+## Security recommendations
+- https://wiki.archlinux.org/title/Security
+- https://wiki.archlinux.org/title/iptables
+- https://wiki.archlinux.org/title/MAC_address_spoofing
 
 ### Uncomment or add parallel downloads
 `ParallelDownloads = 5` >> `/etc/pacman.conf`
@@ -24,7 +23,7 @@ https://wiki.archlinux.org/title/Security
 ### Disable IPV6 (temp.)
 - `sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1`
 - `sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1`
-- or add `ipv6.disable=1` in **GRUB_CMDLINE_LINUX_DEFAULT**
+- or add `ipv6.disable=1` in **GRUB_CMDLINE_LINUX_DEFAULT** (persistent)
 
 ### Disable swap
 `swapoff -a; free -h`
@@ -34,8 +33,7 @@ https://wiki.archlinux.org/title/AppArmor
 
 `sudo systemctl enable --now apparmor`
 
-Edit `/etc/default/grub`:
- - Append `lsm=landlock,lockdown,yama,apparmor,bpf` in **GRUB_CMDLINE_LINUX_DEFAULT**
+Edit `/etc/default/grub`: Append `lsm=landlock,lockdown,yama,apparmor,bpf` in **GRUB_CMDLINE_LINUX_DEFAULT**
 
 Update grub config: `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 
@@ -49,7 +47,7 @@ sudo pacman -S \
   firefox \
   bash-completion \
   base-devel \
-  gparted \
+  #gparted \
   docker \
   firejail \
   unzip \
@@ -58,47 +56,26 @@ sudo pacman -S \
   git \
   curl \
   wget \
-  ufw \
   vim \
-  net-tools \
+  #net-tools \
   mat2 \
-  qbittorrent \
+  #qbittorrent \
   #flatpak \
   virtualbox \
   irssi \
   chromium \
-  #pulseaudio \
-  tor \
+  #tor \
   proxychains \
-  dnsutils \
+  #dnsutils \
   netcat \
-  hashcat \
+  #hashcat \
   hashdeep \
   nmap \
-  traceroute \
-  tcpdump #\
-  #tcpflow
+  #traceroute \
+  tcpdump
 ```
 
-Pass
-https://keepassxc.org/download
+- Pw: https://keepassxc.org/download
+- Lang version manager: https://github.com/asdf-vm/asdf
 
-AUR
-https://aur.archlinux.org/packages/yay
-
-HTTP performance testing
-https://github.com/tsenart/vegeta
-
-Lang version manager
-https://github.com/asdf-vm/asdf
-
-Proxy debug
-https://www.charlesproxy.com/download
-
-Binary analyzer
-- https://hex-rays.com/ida-free/#download
-- http://angusj.com/resourcehacker
-- http://www.pe-explorer.com/
-
-Detect packers
-https://www.aldeid.com/wiki/PEiD
+...
