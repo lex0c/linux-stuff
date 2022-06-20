@@ -25,10 +25,9 @@ https://wiki.archlinux.org
 
 ## Security recommendations
 - https://wiki.archlinux.org/title/Security
+- https://wiki.archlinux.org/title/Sysctl
 - https://wiki.archlinux.org/title/iptables
-- https://wiki.archlinux.org/title/Syslog-ng
 - https://wiki.archlinux.org/title/MAC_address_spoofing
-- https://wiki.archlinux.org/title/Sysctl#TCP/IP_stack_hardening
 
 ## Enable AppArmor
 https://wiki.archlinux.org/title/AppArmor
