@@ -90,6 +90,26 @@ sudo /sbin/iptables -A INPUT -p icmp -j LOGDROP
 - `sudo journalctl -k --grep="IN=.*OUT=.*"`
 - `sudo tail -f /var/log/iptables.log`
 
+## Block spoofing attacks
+
+```
+sudo /sbin/iptables -t mangle -A PREROUTING -s 224.0.0.0/3 -j LOGDROP 
+sudo /sbin/iptables -t mangle -A PREROUTING -s 169.254.0.0/16 -j LOGDROP 
+sudo /sbin/iptables -t mangle -A PREROUTING -s 172.16.0.0/12 -j LOGDROP 
+sudo /sbin/iptables -t mangle -A PREROUTING -s 192.0.2.0/24 -j LOGDROP 
+sudo /sbin/iptables -t mangle -A PREROUTING -s 192.168.0.0/16 -j LOGDROP 
+sudo /sbin/iptables -t mangle -A PREROUTING -s 10.0.0.0/8 -j LOGDROP 
+sudo /sbin/iptables -t mangle -A PREROUTING -s 0.0.0.0/8 -j LOGDROP 
+sudo /sbin/iptables -t mangle -A PREROUTING -s 240.0.0.0/5 -j LOGDROP 
+sudo /sbin/iptables -t mangle -A PREROUTING -s 127.0.0.0/8 ! -i lo -j LOGDROP
+sudo /sbin/iptables -t raw -I PREROUTING -m rpfilter --invert -j LOGDROP
+```
+
+## Mitigate NTP reflection attack
+
+...
+
+
 ## Useful
 
 ### Block an IP address
@@ -116,8 +136,3 @@ sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -j REJECT
 
 `sudo /sbin/iptables -t nat -I PREROUTING -p tcp --dport <port> -j REDIRECT --to-port <port>`
 
-## Spoofing attacks protection
-
-`sudo /sbin/iptables -t raw -I PREROUTING -m rpfilter --invert -j DROP`
-
-...
