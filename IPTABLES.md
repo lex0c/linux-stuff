@@ -118,6 +118,6 @@ Set *MASQUERADE* to mask the IP address of the connecting system and use the gat
 
 Redirect to another local port
 
-`sudo /sbin/iptables -t nat -A PREROUTING -p tcp --dport <port> -j REDIRECT --to-port <port>`
+`sudo /sbin/iptables -t nat -I PREROUTING -p tcp --dport <port> -j REDIRECT --to-port <port>`
 
 ...
