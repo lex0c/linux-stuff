@@ -104,7 +104,7 @@ sudo /sbin/iptables -A INPUT -p icmp -j LOGDROP
 
 ```
 sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -m limit --limit <limit-per-sec>/s --limit-burst <initial-limit> -j ACCEPT 
-sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -j DROP
+sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -j LOGDROP
 ```
 
 ### Redirect incoming traffic to a different IP/port address
