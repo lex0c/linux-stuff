@@ -44,7 +44,7 @@ sudo /sbin/iptables -p OUTPUT ACCEPT
 
 ```
 sudo /sbin/iptables -N LOGDROP
-sudo /sbin/iptables -A LOGDROP -m limit --limit 5/m --limit-burst 10 -j LOG --log-prefix "LOGDROP"
+sudo /sbin/iptables -A LOGDROP -m limit --limit 5/m --limit-burst 10 -j LOG --log-prefix "LOGDROPPKG"
 sudo /sbin/iptables -A LOGDROP -j DROP
 ```
 
