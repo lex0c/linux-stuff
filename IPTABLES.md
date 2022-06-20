@@ -108,16 +108,7 @@ sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -m limit --limit 
 sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -j REJECT --reject-with icmp-proto-unreachable
 ```
 
-### Redirect incoming traffic to a different IP/port address
-
-```
-sudo /sbin/iptables -t nat -A PREROUTING -p tcp --dport <port> -j DNAT --to-destination <ip>:<port>
-sudo /sbin/iptables -t nat -A POSTROUTING -j MASQUERADE
-```
-
-Set *MASQUERADE* to mask the IP address of the connecting system and use the gateway IP address instead. This is necessary for it to communicate back to the gateway, then to your client.
-
-Redirect to another local port
+### Redirect incoming traffic to a different port
 
 `sudo /sbin/iptables -t nat -I PREROUTING -p tcp --dport <port> -j REDIRECT --to-port <port>`
 
