@@ -3,6 +3,8 @@
 - ipv4: `/etc/iptables/iptables.rules`
 - ipv6: `/etc/iptables/ip6tables.rules`
 
+**Apply these rules to ipv6 too. Change `sudo /sbin/iptables` for `sudo /sbin/ip6tables`.**
+
 ## List
 
 `sudo /sbin/iptables -nvL --line-numbers`
@@ -80,6 +82,8 @@ sudo /sbin/iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL NONE -j LOGDR
 sudo /sbin/iptables -A INPUT -p icmp -m limit --limit 30/minute --limit-burst 60 -j ACCEPT
 sudo /sbin/iptables -A INPUT -p icmp -j LOGDROP
 ```
+
+**OBS**: Change `icmp` to `ipv6-icmp` for ipv6 protocol.
 
 ## Logging
 
