@@ -1,13 +1,11 @@
 # Iptables
 
+- ipv4: `/etc/iptables/iptables.rules`
+- ipv6: `/etc/iptables/ip6tables.rules`
+
 ## List
 
 `sudo /sbin/iptables -nvL --line-numbers`
-
-## Rule files
-
-- ipv4: `/etc/iptables/iptables.rules`
-- ipv6: `/etc/iptables/ip6tables.rules`
 
 ## Save
 
@@ -21,7 +19,6 @@
 
 - `sudo /sbin/iptables -D <command>`
 - `sudo /sbin/iptables -D <chain> <index>`
-
 
 ## Reset
 
@@ -51,12 +48,6 @@ sudo /sbin/iptables -A LOGDROP -m limit --limit 5/m --limit-burst 10 -j LOG --lo
 sudo /sbin/iptables -A LOGDROP -j DROP
 ```
 
-## Log all incoming traffic for analysis
-
-Enable this rule for a short time, otherwise log file will be full.
-
-`sudo /sbin/iptables -I INPUT -m state --state NEW -j LOG --log-prefix "LOG_INPUT_TRAFFIC"`
-
 ## Block invalid packets
 
 Drop invalid packets
@@ -71,19 +62,25 @@ Drop SYN packets with suspicious MSS value
 
 `sudo /sbin/iptables -t mangle -A PREROUTING -p tcp -m conntrack --ctstate NEW -m tcpmss ! --mss 536:65535 -j LOGDROP`
 
-
-## Rules
+Drop packets with suspicious TCP flags
 
 ```
-# If machine is not a NAT gateway
-sudo /sbin/iptables -P FORWARD DROP
+sudo /sbin/iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,SYN FIN,SYN -j DROP
+sudo /sbin/iptables -t mangle -A PREROUTING -p tcp --tcp-flags SYN,RST SYN,RST -j DROP
+sudo /sbin/iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,RST FIN,RST -j DROP
+sudo /sbin/iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,ACK FIN -j DROP
+sudo /sbin/iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,URG URG -j DROP
+sudo /sbin/iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,PSH PSH -j DROP
+sudo /sbin/iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL NONE -j DROP
+```
 
-# Drop ICMP traffic by rate limit
+## Drop ICMP traffic by rate limit
+
+```
 sudo /sbin/iptables -A INPUT -p icmp -m limit --limit 30/minute --limit-burst 60 -j ACCEPT
 sudo /sbin/iptables -A INPUT -p icmp -j LOGDROP
-
-
 ```
+
 
 
 ## Logging
