@@ -90,22 +90,22 @@ sudo /sbin/iptables -A INPUT -p icmp -j LOGDROP
 
 ### Block an IP address
 
-`sudo /sbin/iptables -I INPUT -p tcp -s <ip-address> -j REJECT --reject-with icmp-port-unreachable`
+`sudo /sbin/iptables -I INPUT -p tcp -s <ip-address> -j REJECT`
 
 ### Block incoming port
 
-- `sudo /sbin/iptables -I INPUT -p tcp --dport <port-number> -j REJECT --reject-with icmp-port-unreachable`
-- `sudo /sbin/iptables -I INPUT -p tcp -s <ip-address> --dport <port-number> -j REJECT --reject-with icmp-port-unreachable`
+- `sudo /sbin/iptables -I INPUT -p tcp --dport <port-number> -j REJECT`
+- `sudo /sbin/iptables -I INPUT -p tcp -s <ip-address> --dport <port-number> -j REJECT`
 
 ### Block connections by limit
 
-`sudo /sbin/iptables -I INPUT -p tcp -m connlimit --connlimit-above <limit> -j REJECT --reject-with icmp-port-unreachable`
+`sudo /sbin/iptables -I INPUT -p tcp -m connlimit --connlimit-above <limit> -j REJECT`
 
 ### Block new connections by rate limit
 
 ```
 sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -m limit --limit <limit-per-sec>/s --limit-burst <initial-limit> -j ACCEPT 
-sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -j REJECT --reject-with icmp-proto-unreachable
+sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -j REJECT
 ```
 
 ### Redirect incoming traffic to a different port
