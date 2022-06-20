@@ -81,11 +81,43 @@ sudo /sbin/iptables -A INPUT -p icmp -m limit --limit 30/minute --limit-burst 60
 sudo /sbin/iptables -A INPUT -p icmp -j LOGDROP
 ```
 
-
-
 ## Logging
 
 - `sudo journalctl -k --grep="IN=.*OUT=.*"`
 - `sudo tail -f /var/log/iptables.log`
+
+## Useful
+
+### Block an IP address
+
+`sudo /sbin/iptables -I INPUT -s <ip-address> -j REJECT`
+
+### Block incoming port
+
+`sudo /sbin/iptables -I INPUT -p tcp --dport <port-number> -j REJECT`
+
+### Block connections by limit
+
+`sudo /sbin/iptables -A INPUT -p tcp -m connlimit --connlimit-above <limit> -j REJECT`
+
+### Block connections by rate limit
+
+```
+sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -m limit --limit <limit-per-sec>/s --limit-burst <initial-limit> -j ACCEPT 
+sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -j DROP
+```
+
+### Redirect incoming traffic to a different IP/port address
+
+```
+sudo /sbin/iptables -t nat -A PREROUTING -p tcp --dport <port> -j DNAT --to-destination <ip>:<port>
+sudo /sbin/iptables -t nat -A POSTROUTING -j MASQUERADE
+```
+
+Set *MASQUERADE* to mask the IP address of the connecting system and use the gateway IP address instead. This is necessary for it to communicate back to the gateway, then to your client.
+
+Redirect to another local port
+
+`sudo /sbin/iptables -t nat -A PREROUTING -p tcp --dport <port> -j REDIRECT --to-port <port>`
 
 ...
