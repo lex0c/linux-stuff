@@ -116,4 +116,8 @@ sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -j REJECT
 
 `sudo /sbin/iptables -t nat -I PREROUTING -p tcp --dport <port> -j REDIRECT --to-port <port>`
 
+## Spoofing attacks protection
+
+`sudo /sbin/iptables -t raw -I PREROUTING -m rpfilter --invert -j DROP`
+
 ...
