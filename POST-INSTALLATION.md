@@ -74,6 +74,7 @@ sudo pacman -S \
   hashdeep \
   nmap \
   #traceroute \
+  #gnu-netcat \
   tcpdump
 ```
 
