@@ -90,12 +90,12 @@ sudo /sbin/iptables -A INPUT -p icmp -j LOGDROP
 
 ### Block an IP address
 
-`sudo /sbin/iptables -I INPUT -s <ip-address> -j REJECT --reject-with icmp-port-unreachable`
+`sudo /sbin/iptables -I INPUT -p tcp -s <ip-address> -j REJECT --reject-with icmp-port-unreachable`
 
 ### Block incoming/outgoing port
 
 - `sudo /sbin/iptables -I INPUT -p tcp --dport <port-number> -j REJECT --reject-with icmp-port-unreachable`
-- `sudo /sbin/iptables -I INPUT -s <ip-address> --dport <port-number> -j REJECT --reject-with icmp-port-unreachable`
+- `sudo /sbin/iptables -I INPUT -p tcp -s <ip-address> --dport <port-number> -j REJECT --reject-with icmp-port-unreachable`
 
 ### Block connections by limit
 
