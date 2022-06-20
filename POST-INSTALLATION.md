@@ -66,6 +66,7 @@ sudo pacman -S \
   virtualbox \
   irssi \
   chromium \
+  #fail2ban \
   #tor \ # sudo systemctl start tor
   proxychains \
   #dnsutils \
