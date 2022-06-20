@@ -99,13 +99,13 @@ sudo /sbin/iptables -A INPUT -p icmp -j LOGDROP
 
 ### Block connections by limit
 
-`sudo /sbin/iptables -A INPUT -p tcp -m connlimit --connlimit-above <limit> -j REJECT --reject-with icmp-port-unreachable`
+`sudo /sbin/iptables -I INPUT -p tcp -m connlimit --connlimit-above <limit> -j REJECT --reject-with icmp-port-unreachable`
 
-### Block connections by rate limit
+### Block new connections by rate limit
 
 ```
 sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -m limit --limit <limit-per-sec>/s --limit-burst <initial-limit> -j ACCEPT 
-sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -j LOGDROP
+sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -j REJECT --reject-with icmp-proto-unreachable
 ```
 
 ### Redirect incoming traffic to a different IP/port address
