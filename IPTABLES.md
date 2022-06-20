@@ -18,7 +18,7 @@
 ## Delete
 
 - `sudo /sbin/iptables -D <command>`
-- `sudo /sbin/iptables -D <chain> <index>`
+- `sudo /sbin/iptables -D <chain> <num>`
 
 ## Reset
 
