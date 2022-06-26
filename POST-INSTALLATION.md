@@ -80,6 +80,7 @@ sudo pacman -S \
 
 - Pw: https://keepassxc.org/download
 - Lang version manager: https://github.com/asdf-vm/asdf
+- packit: https://aur.archlinux.org/packages/packit
 
 
 ## Checks
