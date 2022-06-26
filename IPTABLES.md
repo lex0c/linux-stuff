@@ -56,10 +56,6 @@ Drop invalid packets
 
 `sudo /sbin/iptables -A INPUT -m conntrack --ctstate INVALID -j LOGDROP`
 
-Drop SYN packets with suspicious MSS value
-
-`sudo /sbin/iptables -t mangle -A PREROUTING -p tcp -m conntrack --ctstate NEW -m tcpmss ! --mss 536:65535 -j LOGDROP`
-
 ## Drop ICMP traffic by rate limit
 
 ```
