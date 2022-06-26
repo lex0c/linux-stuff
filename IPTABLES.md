@@ -56,25 +56,9 @@ Drop invalid packets
 
 `sudo /sbin/iptables -A INPUT -m conntrack --ctstate INVALID -j LOGDROP`
 
-Drop TCP packets that are new and are not SYN
-
-`sudo /sbin/iptables -t mangle -A PREROUTING -p tcp ! --syn -m conntrack --ctstate NEW -j LOGDROP`
-
 Drop SYN packets with suspicious MSS value
 
 `sudo /sbin/iptables -t mangle -A PREROUTING -p tcp -m conntrack --ctstate NEW -m tcpmss ! --mss 536:65535 -j LOGDROP`
-
-Drop packets with suspicious TCP flags
-
-```
-sudo /sbin/iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,SYN FIN,SYN -j LOGDROP
-sudo /sbin/iptables -t mangle -A PREROUTING -p tcp --tcp-flags SYN,RST SYN,RST -j LOGDROP
-sudo /sbin/iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,RST FIN,RST -j LOGDROP
-sudo /sbin/iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,ACK FIN -j LOGDROP
-sudo /sbin/iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,URG URG -j LOGDROP
-sudo /sbin/iptables -t mangle -A PREROUTING -p tcp --tcp-flags ACK,PSH PSH -j LOGDROP
-sudo /sbin/iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL NONE -j LOGDROP
-```
 
 ## Drop ICMP traffic by rate limit
 
