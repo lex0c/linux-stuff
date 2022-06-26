@@ -59,7 +59,6 @@ sudo pacman -S \
   curl \
   wget \
   vim \
-  #net-tools \
   mat2 \
   #qbittorrent \
   #flatpak \
@@ -75,7 +74,7 @@ sudo pacman -S \
   hashdeep \
   nmap \
   #traceroute \
-  #gnu-netcat \
+  gnu-netcat \
   tcpdump
 ```
 
