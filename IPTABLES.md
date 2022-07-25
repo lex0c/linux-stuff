@@ -1,5 +1,7 @@
 # Iptables
 
+https://wiki.archlinux.org/title/iptables
+
 - ipv4: `/etc/iptables/iptables.rules`
 - ipv6: `/etc/iptables/ip6tables.rules`
 
@@ -72,14 +74,19 @@ sudo /sbin/iptables -A INPUT -p icmp -j LOGDROP
 
 ## Useful
 
+### Block all incoming/outgoing traffic
+
+- `sudo /sbin/iptables -P INPUT DROP`
+- `sudo /sbin/iptables -P OUTPUT DROP`
+
 ### Block an IP address
 
-`sudo /sbin/iptables -I INPUT -p tcp -s <ip-address> -j REJECT`
+`sudo /sbin/iptables -I INPUT -p tcp -s <ip> -j REJECT`
 
 ### Block incoming port
 
-- `sudo /sbin/iptables -I INPUT -p tcp --dport <port-number> -j REJECT`
-- `sudo /sbin/iptables -I INPUT -p tcp -s <ip-address> --dport <port-number> -j REJECT`
+- `sudo /sbin/iptables -I INPUT -p tcp --dport <port> -j REJECT`
+- `sudo /sbin/iptables -I INPUT -p tcp -s <ip> --dport <port> -j REJECT`
 
 ### Block connections by limit
 
@@ -95,3 +102,9 @@ sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -j REJECT
 ### Redirect incoming traffic to a different port
 
 `sudo /sbin/iptables -t nat -I PREROUTING -p tcp --dport <port> -j REDIRECT --to-port <port>`
+
+### Allow forwarding of TCP traffic on IP/PORT to another IP/port
+
+`sudo /sbin/iptables -A FORWARD -p tcp --dport <port> -s <ip> -d <ip> -j ACCEPT`
+
+
