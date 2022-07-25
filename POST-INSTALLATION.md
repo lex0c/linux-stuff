@@ -60,22 +60,22 @@ sudo pacman -S \
   wget \
   vim \
   mat2 \
-  #qbittorrent \
+  qbittorrent \
   #flatpak \
   virtualbox \
   irssi \
+  lsof \
   chromium \
-  #fail2ban \ # sudo systemctl enable --now fail2ban
   #tor \ # sudo systemctl start tor
   proxychains \
   #dnsutils \
-  netcat \
   #hashcat \
-  hashdeep \
+  #hashdeep \
   nmap \
   #traceroute \
   gnu-netcat \
-  tcpdump
+  tcpdump \
+  whois
 ```
 
 - Pw: https://keepassxc.org/download
@@ -98,13 +98,13 @@ sudo pacman -S \
 `find / -perm -u=s -type f 2>/dev/null`
 
 ### Net
-`ip addr; ss -antup; lsof -i`
-
-### Process
-`ps aux; ps -ef`
+`ss -antup; lsof -i`
 
 ### Crons
 `crontab -l; ls -la /etc/cron*`
 
+### Process info
+
+`lsof -p <PID>`
 
 ...
