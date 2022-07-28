@@ -103,8 +103,13 @@ sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -j REJECT
 
 `sudo /sbin/iptables -t nat -I PREROUTING -p tcp --dport <port> -j REDIRECT --to-port <port>`
 
-### Allow forwarding of TCP traffic on IP/PORT to another IP/port
+### IP forwarding
 
-`sudo /sbin/iptables -A FORWARD -p tcp --dport <port> -s <ip> -d <ip> -j ACCEPT`
+- 0 = disabled
+- 1 = enabled
 
+`echo 1 > /proc/sys/net/ipv4/ip_forward` or `sysctl -w net.ipv4.ip_forward=1 && sysctl -p`
 
+persistent
+
+`sudo vim /etc/sysctl.conf`
