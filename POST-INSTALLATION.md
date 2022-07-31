@@ -96,7 +96,7 @@ sudo pacman -S \
 ### Super users
 `grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1 }'`
 
-### SUID
+### SUID / GUID
 - `find / -perm -u=s -type f 2>/dev/null`
 - `find / -type f -perm -04000 2> /dev/null`
 - `find / -type f -perm -02000 2> /dev/null`
