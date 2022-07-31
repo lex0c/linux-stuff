@@ -65,6 +65,7 @@ sudo pacman -S \
   virtualbox \
   irssi \
   lsof \
+  gdb \
   chromium \
   #tor \ # sudo systemctl start tor
   proxychains \
@@ -78,9 +79,10 @@ sudo pacman -S \
   whois
 ```
 
-- Pw: https://keepassxc.org/download
-- Lang version manager: https://github.com/asdf-vm/asdf
+- Passw: https://keepassxc.org/download
+- Lvm: https://github.com/asdf-vm/asdf
 - packit: https://aur.archlinux.org/packages/packit
+- ghidra: https://github.com/NationalSecurityAgency/ghidra
 
 
 ## Checks
@@ -95,7 +97,10 @@ sudo pacman -S \
 `grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1 }'`
 
 ### SUID
-`find / -perm -u=s -type f 2>/dev/null`
+- `find / -perm -u=s -type f 2>/dev/null`
+- `find / -type f -perm -04000 2> /dev/null`
+- `find / -type f -perm -02000 2> /dev/null`
+
 
 ### Net
 `ss -antup; lsof -i`
