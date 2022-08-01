@@ -49,7 +49,7 @@ sudo pacman -S \
   firefox \
   bash-completion \
   base-devel \
-  #gparted \
+  gparted \
   docker \ # sudo systemctl start docker
   firejail \
   unzip \
@@ -72,7 +72,7 @@ sudo pacman -S \
   proxychains \
   #dnsutils \
   #hashcat \
-  #hashdeep \
+  hashdeep \
   nmap \
   #traceroute \
   gnu-netcat \
