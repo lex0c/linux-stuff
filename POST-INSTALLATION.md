@@ -66,6 +66,7 @@ sudo pacman -S \
   irssi \
   lsof \
   gdb \
+  pwndbg \ # echo 'source /usr/share/pwndbg/gdbinit.py' >> ~/.gdbinit
   chromium \
   #tor \ # sudo systemctl start tor
   proxychains \
