@@ -102,10 +102,10 @@ sudo pacman -S \
 - `find / -type f -perm -04000 2> /dev/null`
 - `find / -type f -perm -02000 2> /dev/null`
 
-### Net
+### Net status
 `ss -antup; lsof -i`
 
-### Crons
+### List crons
 `crontab -l; ls -la /etc/cron*`
 
 ## Useful commands
