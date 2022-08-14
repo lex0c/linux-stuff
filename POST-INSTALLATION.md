@@ -42,7 +42,7 @@ Update grub config: `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 
 Load snaps profile: `sudo apparmor_parser -r /var/lib/snapd/apparmor/profiles/*`
 
-## Install useful
+##  Useful programs
 ```shell
 sudo pacman -S \
   syslog-ng \ # sudo systemctl enable --now syslog-ng@default.service
@@ -102,15 +102,22 @@ sudo pacman -S \
 - `find / -type f -perm -04000 2> /dev/null`
 - `find / -type f -perm -02000 2> /dev/null`
 
-
 ### Net
 `ss -antup; lsof -i`
 
 ### Crons
 `crontab -l; ls -la /etc/cron*`
 
-### Process info
-
-`lsof -p <PID>`
-
-...
+## Useful commands
+```
+lsof # List open files (process)
+stat # Display file or file system status
+modinfo # Show information about a Linux Kernel module
+modprobe # Add and remove modules from the Linux Kernel
+lsmod # Show the status of modules in the Linux Kernel
+dmesg # Print or control the kernel ring buffer (logs)
+watch # Execute a program periodically, showing output fullscreen
+xxd # Make a hexdump or do the reverse
+readelf # Display information about ELF files
+objdump # Display information from object files
+```
