@@ -109,7 +109,7 @@ sudo pacman -S \
 `crontab -l; ls -la /etc/cron*`
 
 ## Useful commands
-```
+```shell
 lsof # List open files (process)
 stat # Display file or file system status
 modinfo # Show information about a Linux Kernel module
