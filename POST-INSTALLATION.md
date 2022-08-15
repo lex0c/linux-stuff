@@ -59,7 +59,7 @@ sudo pacman -S \
   curl \
   wget \
   vim \
-  mat2 \
+  perl-image-exiftool \
   qbittorrent \
   #flatpak \
   virtualbox \
@@ -120,4 +120,5 @@ watch # Execute a program periodically, showing output fullscreen
 xxd # Make a hexdump or do the reverse
 readelf # Display information about ELF files
 objdump # Display information from object files
+exiftool # Show/Remove files metadata
 ```
