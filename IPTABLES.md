@@ -81,22 +81,22 @@ sudo /sbin/iptables -A INPUT -p icmp -j LOGDROP
 
 ### Block an IP address
 
-`sudo /sbin/iptables -I INPUT -p tcp -s <ip> -j REJECT`
+`sudo /sbin/iptables -I INPUT -p tcp -s <ip> -j DROP`
 
 ### Block incoming port
 
-- `sudo /sbin/iptables -I INPUT -p tcp --dport <port> -j REJECT`
-- `sudo /sbin/iptables -I INPUT -p tcp -s <ip> --dport <port> -j REJECT`
+- `sudo /sbin/iptables -I INPUT -p tcp --dport <port> -j DROP`
+- `sudo /sbin/iptables -I INPUT -p tcp -s <ip> --dport <port> -j DROP`
 
 ### Block connections by limit
 
-`sudo /sbin/iptables -I INPUT -p tcp -m connlimit --connlimit-above <limit> -j REJECT`
+`sudo /sbin/iptables -I INPUT -p tcp -m connlimit --connlimit-above <limit> -j DROP`
 
 ### Block new connections by rate limit
 
 ```
 sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -m limit --limit <limit-per-sec>/s --limit-burst <initial-limit> -j ACCEPT 
-sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -j REJECT
+sudo /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -j DROP
 ```
 
 ### Redirect incoming traffic to a different port
