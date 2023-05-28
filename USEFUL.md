@@ -13,6 +13,7 @@ tmp fix: `export OPENSSL_CONF=/dev/null`
 
 ### System
 - `ps -ef`
+- `top -p PID`
 - `uname -a; env; history`
 - `systemctl list-unit-files`
 - `tail -f /var/log/messages`
