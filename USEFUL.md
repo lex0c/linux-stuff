@@ -17,6 +17,7 @@ tmp fix: `export OPENSSL_CONF=/dev/null`
 - `systemctl list-unit-files`
 - `tail -f /var/log/messages`
 - `find / -mtime -7`
+- `find / -type f -mmin -60`
 - `nmap -sT -v localhost`
 
 ### Who
@@ -49,5 +50,6 @@ watch # Execute a program periodically, showing output fullscreen
 xxd # Make a hexdump or do the reverse
 readelf # Display information about ELF files
 objdump # Display information from object files
+strings # Display text strings embedded in binary
 exiftool # Show/Remove files metadata
 ```
