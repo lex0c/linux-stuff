@@ -1,7 +1,7 @@
 from scapy.all import *
 
 # Replace these with the target URL and DNS server IP
-target_url = "www.tecmundo.com.br"
+target_url = ""
 dns_server_ip = "8.8.8.8"  # Google Public DNS
 
 # Craft a DNS query packet
