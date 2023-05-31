@@ -41,6 +41,7 @@ tmp fix: `export OPENSSL_CONF=/dev/null`
 
 ## Commands
 ```shell
+strace # Display the system calls and signals of a specific program
 lsof # List open files (process)
 stat # Display file or file system status
 modinfo # Show information about a Linux Kernel module
