@@ -59,18 +59,20 @@ sudo pacman -S \
   vim \
   perl-image-exiftool \
   qbittorrent \
-  #flatpak \
+  flatpak \
   virtualbox \
   irssi \
   lsof \
   gdb \
   pwndbg \ # echo 'source /usr/share/pwndbg/gdbinit.py' >> ~/.gdbinit
   chromium \
+  strings \
+  strace \
   #tor \ # sudo systemctl start tor
-  proxychains \
+  #proxychains \
   #dnsutils \
   #hashcat \
-  hashdeep \
+  #hashdeep \
   nmap \
   #traceroute \
   gnu-netcat \
