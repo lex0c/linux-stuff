@@ -75,6 +75,7 @@ sudo pacman -S \
   #hashdeep \
   nmap \
   #traceroute \
+  #rkhunter \
   gnu-netcat \
   tcpdump \
   whois
