@@ -48,6 +48,7 @@ sudo pacman -S \
   bash-completion \
   base-devel \
   gparted \
+  cryptsetup \
   docker \ # sudo systemctl start docker
   firejail \
   unzip \
@@ -64,10 +65,9 @@ sudo pacman -S \
   irssi \
   lsof \
   gdb \
-  pwndbg \ # echo 'source /usr/share/pwndbg/gdbinit.py' >> ~/.gdbinit
-  chromium \
-  strings \
-  strace \
+  #pwndbg \ # echo 'source /usr/share/pwndbg/gdbinit.py' >> ~/.gdbinit
+  #chromium \
+  #strace \
   #tor \ # sudo systemctl start tor
   #proxychains \
   #dnsutils \
