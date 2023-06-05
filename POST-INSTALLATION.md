@@ -47,6 +47,8 @@ sudo pacman -S \
   firefox \
   bash-completion \
   base-devel \
+  pulseaudio \
+  pavucontrol \
   gparted \
   cryptsetup \
   docker \ # sudo systemctl start docker
