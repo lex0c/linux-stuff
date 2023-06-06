@@ -67,17 +67,17 @@ sudo pacman -S \
   irssi \
   lsof \
   gdb \
-  #pwndbg \ # echo 'source /usr/share/pwndbg/gdbinit.py' >> ~/.gdbinit
-  #chromium \
-  #strace \
-  #tor \ # sudo systemctl start tor
-  #proxychains \
-  #dnsutils \
-  #hashcat \
-  #hashdeep \
+  pwndbg \ # echo 'source /usr/share/pwndbg/gdbinit.py' >> ~/.gdbinit
+  chromium \
+  strace \
+  tor \ # sudo systemctl start tor
+  proxychains \
+  dnsutils \
+  hashcat \
+  hashdeep \
   nmap \
-  #traceroute \
-  #rkhunter \
+  traceroute \
+  rkhunter \
   gnu-netcat \
   tcpdump \
   whois \ 
