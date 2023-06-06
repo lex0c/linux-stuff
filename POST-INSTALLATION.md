@@ -80,7 +80,8 @@ sudo pacman -S \
   #rkhunter \
   gnu-netcat \
   tcpdump \
-  whois
+  whois \ 
+  graphviz
 ```
 
 - Passw: https://keepassxc.org/download
