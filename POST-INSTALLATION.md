@@ -84,7 +84,8 @@ sudo pacman -S \
   graphviz
 ```
 
-- Passw: https://keepassxc.org/download
-- Lvm: https://github.com/asdf-vm/asdf
-- packit: https://aur.archlinux.org/packages/packit
-- ghidra: https://github.com/NationalSecurityAgency/ghidra
+- https://keepassxc.org/download
+- https://electrum.org/#download
+- https://github.com/asdf-vm/asdf
+- https://aur.archlinux.org/packages/packit
+- https://github.com/NationalSecurityAgency/ghidra
