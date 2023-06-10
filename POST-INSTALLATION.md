@@ -40,6 +40,25 @@ Update grub config: `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 
 **Reboot now!**
 
+## Lockdown
+
+```shell
+sudo iptables -P INPUT DROP
+sudo iptables -P FORWARD DROP
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+sudo ip6tables -P INPUT DROP
+sudo ip6tables -P FORWARD DROP
+sudo ip6tables -P OUTPUT ACCEPT
+sudo ip6tables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+
+sudo iptables-save > /etc/iptables/rules.v4
+sudo ip6tables-save > /etc/iptables/rules.v6
+
+sudo iptables -L
+sudo ip6tables -L
+```
+
 ##  Useful programs
 ```shell
 sudo pacman -S \
