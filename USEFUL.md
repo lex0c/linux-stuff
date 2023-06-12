@@ -4,6 +4,10 @@
 
 tmp fix: `export OPENSSL_CONF=/dev/null`
 
+`export TERM=xterm-256color`
+
+"eval `ssh-agent` && ssh-add"
+
 
 ## Load snaps profile
 
