@@ -66,6 +66,7 @@ sudo pacman -S \
   firefox \
   bash-completion \
   base-devel \
+  net-tools \
   pulseaudio \
   pavucontrol \
   gparted \
