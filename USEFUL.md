@@ -24,6 +24,7 @@ tmp fix: `export OPENSSL_CONF=/dev/null`
 - `find / -mtime -7`
 - `find / -type f -mmin -60`
 - `nmap -sT -v localhost`
+- `find /dir -executable -type f`
 
 ### Who
 `who; w; last`
