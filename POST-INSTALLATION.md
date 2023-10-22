@@ -73,6 +73,7 @@ sudo pacman -S \
   cryptsetup \
   docker \ # sudo systemctl start docker
   firejail \
+  inotify-tools \
   unzip \
   zip \
   openvpn \
@@ -88,7 +89,7 @@ sudo pacman -S \
   lsof \
   gdb \
   pwndbg \ # echo 'source /usr/share/pwndbg/gdbinit.py' >> ~/.gdbinit
-  chromium \
+  #chromium \
   strace \
   tor \ # sudo systemctl start tor
   proxychains \
@@ -97,11 +98,12 @@ sudo pacman -S \
   hashdeep \
   nmap \
   traceroute \
-  rkhunter \
+  #rkhunter \
   gnu-netcat \
   tcpdump \
-  whois \ 
-  graphviz
+  #whois \ 
+  graphviz \
+  #sendmail
 ```
 
 - https://keepassxc.org/download
