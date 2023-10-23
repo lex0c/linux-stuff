@@ -52,6 +52,10 @@ tmp fix: `export OPENSSL_CONF=/dev/null`
 
 `dd if=/dev/zero of=foobar.txt bs=1M count=<number_of_megabytes>`
 
+### Random string
+
+`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 23 | head -n 1`
+
 ## Commands
 ```shell
 strace # Display the system calls and signals of a specific program
