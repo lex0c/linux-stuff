@@ -44,6 +44,14 @@ tmp fix: `export OPENSSL_CONF=/dev/null`
 ### List crons
 `crontab -l; ls -la /etc/cron*`
 
+### history
+
+`~/.bash_history`
+
+### Create file
+
+`dd if=/dev/zero of=foobar.txt bs=1M count=<number_of_megabytes>`
+
 ## Commands
 ```shell
 strace # Display the system calls and signals of a specific program
