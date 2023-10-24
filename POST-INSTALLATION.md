@@ -63,12 +63,13 @@ sudo ip6tables -L
 ```shell
 sudo pacman -S \
   syslog-ng \ # sudo systemctl enable --now syslog-ng@default.service
-  firefox \
+  #firefox \
   bash-completion \
   base-devel \
   net-tools \
   pulseaudio \
   pavucontrol \
+  pulseaudio-alsa \
   gparted \
   cryptsetup \
   docker \ # sudo systemctl start docker
@@ -87,6 +88,7 @@ sudo pacman -S \
   virtualbox \
   irssi \
   lsof \
+  iftop \
   gdb \
   pwndbg \ # echo 'source /usr/share/pwndbg/gdbinit.py' >> ~/.gdbinit
   #chromium \
