@@ -23,6 +23,8 @@ https://wiki.archlinux.org
 ## Disable swap
 `swapoff -a; free -h`
 
+persistent mode: `/etc/fstab`
+
 ## Security recommendations
 - https://wiki.archlinux.org/title/Security
 - https://wiki.archlinux.org/title/Sysctl
