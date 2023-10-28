@@ -73,6 +73,13 @@ strings # Display text strings embedded in binary
 exiftool # Show/Remove files metadata
 ```
 
+### md5sum
+
+```sh
+find . -type f ! -name checksums.md5 -exec md5sum {} + > checksums.md5
+md5sum -c checksums.md5
+```
+
 ### -1
 
 `nc -lvp 4444`
