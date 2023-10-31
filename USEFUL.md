@@ -56,6 +56,10 @@ tmp fix: `export OPENSSL_CONF=/dev/null`
 
 `cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 23 | head -n 1`
 
+### rm
+
+`find ./ -type f -name "*.json" -exec rm -f {} \;`
+
 ## Commands
 ```shell
 strace # Display the system calls and signals of a specific program
