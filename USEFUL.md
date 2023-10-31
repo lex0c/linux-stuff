@@ -80,6 +80,12 @@ find . -type f ! -name checksums.md5 -exec md5sum {} + > checksums.md5
 md5sum -c checksums.md5
 ```
 
+### pod debug
+```sh
+kubectl run pod-debug --rm -i --tty --image alpine:latest -- /bin/sh
+#apk --update add <package>
+```
+
 ### -1
 
 `nc -lvp 4444`
