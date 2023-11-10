@@ -30,6 +30,7 @@ persistent mode: `/etc/fstab`
 - https://wiki.archlinux.org/title/Sysctl
 - https://wiki.archlinux.org/title/iptables
 - https://wiki.archlinux.org/title/MAC_address_spoofing
+- https://wiki.archlinux.org/title/Rng-tools
 
 ## Enable AppArmor
 https://wiki.archlinux.org/title/AppArmor
