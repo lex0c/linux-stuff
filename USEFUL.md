@@ -92,6 +92,12 @@ kubectl run pod-debug --rm -i --tty --image alpine:latest -- /bin/sh
 #apk --update add <package>
 ```
 
+### Count
+```sh
+awk '{print $<position>}' <logfile> | sort | uniq -c
+```
+
+
 ### -1
 
 `nc -lvp 4444`
