@@ -88,7 +88,7 @@ md5sum -c checksums.md5
 ```sh
 kubectl run pod-debug --rm -i --tty --image alpine:latest -- /bin/sh
 #apk update
-#apk add busybox-extra
+#apk add busybox-extras
 #apk --update add <package>
 ```
 
