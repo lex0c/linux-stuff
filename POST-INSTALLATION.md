@@ -66,7 +66,7 @@ sudo ip6tables -L
 ```shell
 sudo pacman -S \
   syslog-ng \ # sudo systemctl enable --now syslog-ng@default.service
-  #firefox \
+  firefox \
   bash-completion \
   base-devel \
   net-tools \
@@ -81,6 +81,8 @@ sudo pacman -S \
   unzip \
   zip \
   openvpn \
+  fuse \
+  appimagelauncher \
   git \
   curl \
   wget \
@@ -94,7 +96,7 @@ sudo pacman -S \
   iftop \
   gdb \
   pwndbg \ # echo 'source /usr/share/pwndbg/gdbinit.py' >> ~/.gdbinit
-  #chromium \
+  chromium \
   strace \
   tor \ # sudo systemctl start tor
   proxychains \
@@ -103,12 +105,12 @@ sudo pacman -S \
   hashdeep \
   nmap \
   traceroute \
-  #rkhunter \
+  rkhunter \
   gnu-netcat \
   tcpdump \
-  #whois \ 
+  whois \ 
   graphviz \
-  #sendmail
+  sendmail
 ```
 
 - https://keepassxc.org/download
