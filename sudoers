@@ -4,4 +4,7 @@ Defaults use_pty
 Defaults log_host, log_year, logfile="/var/log/sudo.log"
 Defaults passwd_tries=5
 Defaults passwd_timeout=2
+Defaults timestamp_timeout=5
 Defaults insults
+Defaults env_reset
+Defaults env_keep += "LANG LANGUAGE LC_*"
