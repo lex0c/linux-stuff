@@ -1,3 +1,4 @@
+## LUKS
 ```sh
 sudo cryptsetup luksFormat /dev/sda2
 ```
@@ -17,3 +18,9 @@ sudo umount /run/media/<username>/my_encrypted_volume
 ```sh
 sudo cryptsetup luksClose my_encrypted_volume
 ```
+
+## VeraCrypt
+
+Dados em contêineres.
+
+...
